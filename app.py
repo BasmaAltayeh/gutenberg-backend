@@ -8,6 +8,10 @@ app = Flask(__name__)
 
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+@app.route('/')
+def home():
+    return "Hello, The App is working"
+
 # Register blueprints (routes)
 app.register_blueprint(book_routes)
 app.register_blueprint(analysis_routes)
